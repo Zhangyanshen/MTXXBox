@@ -1,0 +1,20 @@
+PODS:
+  - SwiftShell (5.1.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - SwiftShell (>= 5.1.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - SwiftShell
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  SwiftShell: 0c2c6f2fcfc210e84a7b06390581923e2aab2ec7
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 4ce0e9b6882bef64cc9d7c72c3dcedcf94c3636f
+
+COCOAPODS: 1.11.2
