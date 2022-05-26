@@ -1,4 +1,7 @@
 :root {
+    color-scheme: light dark;
+    --underPageBackgroundColor: white;
+    --textBackground: white;
     --addBackground: #DFD;
     --background: #F8F8F8;
     --blameBorder: white;
@@ -19,5 +22,32 @@
     --shadow: lightgray;
     --textColor: black;
     --lineNumColor: gray;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --underPageBackgroundColor: rgb(32, 28, 37);
+        --textBackground: rgb(32, 28, 37);
+        --addBackground: #336633;
+        --background: #7F7F7F;
+        --blameBorder: #000000;
+        --buttonActiveBorder: #A0A59F;
+        --buttonActiveGrad1: #8E938D;
+        --buttonActiveGrad2: #7E827D;
+        --buttonBorder: #8A8D89;
+        --buttonGrad1: #767B75;
+        --buttonGrad2: #696E68;
+        --deleteBackground: #663333;
+        --divider: #808080;
+        --heading: #404040;
+        --hunkBottomBorder: #666666;
+        --hunkTopBorder: #999999;
+        --jumpActive: white;
+        --jumpHoverBackground: rgba(0, 0, 0, 0.5);
+        --leftBackground: #4C4C4C;
+        --shadow: #262626;
+        --textColor: white;
+        --lineNumColor: gray;
+    }
 }
 

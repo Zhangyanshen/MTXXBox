@@ -28,7 +28,7 @@ struct ImportFeatureView: View {
                 } label: {
                     Text("选择json文件")
                 }
-                Text(jsonFilePath ?? "请选择json文件")
+                Text(jsonFilePath ?? String(localized: "请选择json文件"))
                 Spacer()
             }
             .padding(.vertical, 8)
@@ -60,7 +60,7 @@ struct ImportFeatureView: View {
     
     private func chooseJsonFile() {
         let panel = NSOpenPanel()
-        panel.message = "选择json文件"
+        panel.message = String(localized: "选择json文件")
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
         panel.canChooseFiles = true

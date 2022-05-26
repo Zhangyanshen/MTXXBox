@@ -15,6 +15,8 @@ struct AddRepoView: View {
     @State private var branch: String = ""
     @State private var showErrorMsg = false
     @State private var errorMsg: String = ""
+    @State private var branches: [String] = []
+    @State private var refreshing: Bool = false
     
     var body: some View {
         VStack {
@@ -28,7 +30,34 @@ struct AddRepoView: View {
             }
             HStack {
                 Text("分支:")
-                TextField("请输入分支", text: $branch)
+                ZStack {
+                    Menu {
+                        ForEach(branches, id: \.self) { branch in
+                            Button {
+                                self.branch = branch
+                            } label: {
+                                Text(branch)
+                            }
+                        }
+                    } label: {
+                        Text(branch)
+                    }
+                    .modifier(MenuStyle())
+                    .disabled(refreshing)
+                    
+                    if refreshing {
+                        ProgressView()
+                            .frame(width:20, height: 20)
+                            .progressViewStyle(CircularProgressViewStyle())
+                    }
+                }
+
+                Button {
+                    refreshBranches()
+                } label: {
+                    Text("刷新")
+                }
+                .disabled(refreshing)
             }
             Divider()
                 .padding(.vertical, 8)
@@ -51,6 +80,39 @@ struct AddRepoView: View {
         }
         .padding()
         .frame(minWidth: 400)
+    }
+    
+    private func refreshBranches() {
+        showErrorMsg = false
+        refreshing = true
+        DispatchQueue.global().async {
+            let (out, error) = MBoxCommand.sharedInstance.gitRemoteBranches(of: url)
+            DispatchQueue.main.async {
+                refreshing = false
+                if out != nil {
+                    formatBranches(out!)
+                } else {
+                    showErrorMsg = true
+                    errorMsg = """
+                    获取远端分支失败
+                    
+                    \(error ?? "")
+                    """
+                }
+            }
+        }
+    }
+    
+    private func formatBranches(_ out: String) {
+        branches = out.components(separatedBy: "\n").map { str in
+            guard let lastStr = str.components(separatedBy: "\t").last else { return "" }
+            return lastStr.replacingOccurrences(of: "refs/heads/", with: "")
+        }.filter({
+            $0 != ""
+        })
+        if branches.count > 0 {
+            branch = branches[0]
+        }
     }
     
     private func okButtonClick() {

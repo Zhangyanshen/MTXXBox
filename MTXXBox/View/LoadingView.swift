@@ -21,6 +21,7 @@ struct LoadingView: View {
                 ProgressView()
                     .padding(.top, 16)
                     .padding(8)
+                    .progressViewStyle(LinearProgressViewStyle())
             }
             Text(tip)
                 .foregroundColor(.primary)

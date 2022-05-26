@@ -47,7 +47,7 @@ struct RepoView: View {
                             }
                         }
                     }
-                    .listStyle(PlainListStyle())
+//                    .listStyle(PlainListStyle())
                 }
             }
         }

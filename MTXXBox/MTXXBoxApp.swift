@@ -16,5 +16,11 @@ struct MTXXBoxApp: App {
             ContentView()
                 .environmentObject(store)
         }
+        .commands {
+            
+        }
+        Settings {
+            SettingView()
+        }
     }
 }

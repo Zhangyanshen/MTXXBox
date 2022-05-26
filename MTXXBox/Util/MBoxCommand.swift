@@ -231,6 +231,10 @@ class MBoxCommand {
     
     // MARK: - Git
     
+    func gitRemoteBranches(of url: String) -> (String?, String?) {
+        self.run(bash: "git ls-remote --heads --quiet \(url)", format: false)
+    }
+    
     func gitFetch() -> (String?, String?) {
         self.run(bash: "mbox git fetch -v", format: false)
     }

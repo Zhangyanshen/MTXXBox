@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7601157DDE7026D3373477E5 /* libPods-MTXXBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB22DC9E05E3D4DC428761D3 /* libPods-MTXXBox.a */; };
+		EE124504283F5F7F00655061 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE124503283F5F7F00655061 /* SettingView.swift */; };
+		EE124507283F811100655061 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE124509283F811100655061 /* Localizable.strings */; };
 		EE52C2782833CEE4001665BB /* GitCommitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE52C2772833CEE4001665BB /* GitCommitView.swift */; };
 		EE7418E02812849300729138 /* MTXXBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7418DF2812849300729138 /* MTXXBoxApp.swift */; };
 		EE7418E22812849300729138 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7418E12812849300729138 /* ContentView.swift */; };
@@ -57,6 +59,9 @@
 		405FE9406F207FE3B366EB75 /* Pods-MTXXBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTXXBox.debug.xcconfig"; path = "Target Support Files/Pods-MTXXBox/Pods-MTXXBox.debug.xcconfig"; sourceTree = "<group>"; };
 		A345E55866FA19B8E9F6CEE5 /* Pods-MTXXBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTXXBox.release.xcconfig"; path = "Target Support Files/Pods-MTXXBox/Pods-MTXXBox.release.xcconfig"; sourceTree = "<group>"; };
 		BB22DC9E05E3D4DC428761D3 /* libPods-MTXXBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MTXXBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE124503283F5F7F00655061 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		EE124508283F811100655061 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EE12450A283F811300655061 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EE52C2772833CEE4001665BB /* GitCommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCommitView.swift; sourceTree = "<group>"; };
 		EE7418DC2812849300729138 /* MTXXBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTXXBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7418DF2812849300729138 /* MTXXBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTXXBoxApp.swift; sourceTree = "<group>"; };
@@ -158,6 +163,7 @@
 				EEB5A2412824C34200C8BC18 /* Extension.swift */,
 				EEB5A2482825251B00C8BC18 /* Styles.swift */,
 				EED55804282B9FD40098A163 /* MTXXBox-Bridging-Header.h */,
+				EE124509283F811100655061 /* Localizable.strings */,
 			);
 			path = MTXXBox;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				EEB5A2432824F7AE00C8BC18 /* Feature */,
 				EED5580C282CFAEB0098A163 /* WebView.swift */,
 				EE52C2772833CEE4001665BB /* GitCommitView.swift */,
+				EE124503283F5F7F00655061 /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +277,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = EE7418D32812849300729138;
 			productRefGroup = EE7418DD2812849300729138 /* Products */;
@@ -287,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE7418E72812849500729138 /* Preview Assets.xcassets in Resources */,
+				EE124507283F811100655061 /* Localizable.strings in Resources */,
 				EED55815282D0C9B0098A163 /* html in Resources */,
 				EE7418E42812849500729138 /* Assets.xcassets in Resources */,
 			);
@@ -345,12 +354,25 @@
 				EEB5A23328194B4800C8BC18 /* ContainerView.swift in Sources */,
 				EEEEA02428163EC000E2808A /* WorkspaceListView.swift in Sources */,
 				EEB5A231281935E300C8BC18 /* Container.swift in Sources */,
+				EE124504283F5F7F00655061 /* SettingView.swift in Sources */,
 				EE7418F62812A8C700729138 /* ProjectToolBar.swift in Sources */,
 				EED5580D282CFAEB0098A163 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EE124509283F811100655061 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE124508283F811100655061 /* en */,
+				EE12450A283F811300655061 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EE7418E92812849500729138 /* Debug */ = {

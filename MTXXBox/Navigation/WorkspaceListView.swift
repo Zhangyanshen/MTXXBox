@@ -67,7 +67,7 @@ struct WorkspaceListView: View {
     private var emptyView: some View {
         VStack {
             Spacer()
-            Text("No Workspaces")
+            Text("新建或打开工作空间")
             Spacer()
         }
     }
@@ -117,7 +117,7 @@ struct WorkspaceListView: View {
                 }
             }
         }
-        .listStyle(PlainListStyle())
+//        .listStyle(PlainListStyle())
     }
     
     // 底部按钮
@@ -147,7 +147,7 @@ struct WorkspaceListView: View {
     // 新建MBox Workspace
     private func createWorkspace() {
         let panel = NSOpenPanel()
-        panel.message = "新建MBox Workspace"
+        panel.message = String(localized: "新建MBox Workspace")
         panel.allowsMultipleSelection = false
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
@@ -183,7 +183,7 @@ struct WorkspaceListView: View {
     // 打开已经存在的MBox workspace
     private func openWorkspace() {
         let panel = NSOpenPanel()
-        panel.message = "打开MBox Workspace"
+        panel.message = String(localized: "打开MBox Workspace")
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = true
         panel.canChooseFiles = false

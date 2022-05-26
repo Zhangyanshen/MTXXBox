@@ -145,7 +145,7 @@ struct RepoListView: View {
                 }
             }
         }
-        .listStyle(PlainListStyle())
+//        .listStyle(PlainListStyle())
     }
     
     private var bottomView: some View {
@@ -350,7 +350,7 @@ struct RepoListView: View {
     // 导出feature
     private func exportFeature() {
         let panel = NSSavePanel()
-        panel.message = "导出Feature"
+        panel.message = String(localized: "导出Feature")
         panel.nameFieldStringValue = "feature.json"
         panel.showsHiddenFiles = false
         panel.isExtensionHidden = false
